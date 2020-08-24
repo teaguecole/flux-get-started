@@ -8,8 +8,6 @@ metadata:
     app: podinfo
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/tag.init: regex:^3.10.*
-    fluxcd.io/tag.podinfod: semver:~3.1
 spec:
   strategy:
     rollingUpdate:
@@ -34,7 +32,7 @@ spec:
         - "1"
       containers:
       - name: podinfod
-        image: stefanprodan/podinfo:3.1.5
+        image: teaguecole/podinfo:4.0.5
         imagePullPolicy: IfNotPresent
         ports:
         - name: http
